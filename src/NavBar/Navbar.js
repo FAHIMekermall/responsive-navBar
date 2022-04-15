@@ -11,7 +11,7 @@ const Navbar = () => {
 					Logo
 				</Link>
 			</nav>
-			<div className="z-50">
+			<div className="block my-auto md:hidden z-50">
 				{menuOpen ? (
 					<HiOutlineMenuAlt1
 						size={"2em"}
@@ -26,21 +26,31 @@ const Navbar = () => {
 			</div>
 			<nav
 				style={!menuOpen ? { right: "-220px" } : { right: "20px" }}
-				className="flex flex-col md:flex-row bg-white absolute top-8 "
+				className="flex flex-col md:flex-row bg-white absolute md:static top-8 "
 			>
-				<NavLink className="font-bold py-4 px-6" to="/">
+				<NavLink style={({isActive})=> {
+                    return isActive ? {borderBottom:"2px solid red"} : {borderBottom:"1px solid gray"}
+                }} className="text-right font-bold p-2 my-4 mx-6 " to="/">
 					Home
 				</NavLink>
-				<NavLink className="font-bold py-4 px-6" to="/blogs">
+				<NavLink style={({isActive})=> {
+                    return isActive ? {borderBottom:"2px solid red"} : {borderBottom:"1px solid gray"}
+                }} className="text-right font-bold p-2 my-4 mx-6" to= "/blogs">
 					Blogs
 				</NavLink>
-				<NavLink className="font-bold py-4 px-6" to="/about">
+				<NavLink style={({isActive})=> {
+                    return isActive ? {borderBottom:"2px solid red"} : {borderBottom:"1px solid gray"}
+                }} className="text-right font-bold p-2 my-4 mx-6" to= "/about">
 					About
 				</NavLink>
-				<NavLink className="font-bold py-4 px-6" to="/sign-up">
+				<NavLink style={({isActive})=> {
+                    return isActive ? {borderBottom:"2px solid red"} : {borderBottom:"1px solid gray"}
+                }} className="text-right font-bold p-2 my-4 mx-6" to="/sign-up">
 					Sign up
 				</NavLink>
-				<NavLink className="font-bold py-4 px-6" to="/login">
+				<NavLink style={({isActive})=> {
+                    return isActive ? {borderBottom:"2px solid red"} : {borderBottom:"1px solid gray"}
+                }} className="text-right font-bold p-2 my-4 mx-6" to= "/login">
 					Log in
 				</NavLink>
 			</nav>
